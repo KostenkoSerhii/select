@@ -1,0 +1,39 @@
+*
+	box-sizing: border-box
+.container
+	background: #f8f8f8
+	width: 700px
+	height: 380px
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+.wrapper
+	padding: 50px 60px 0
+.block
+	background: #fff
+	border: 1px solid #e2e2e2
+	color: #a7a7a7
+	cursor: pointer
+	font: 400 15px/50px "Exo 2"
+	height: 50px
+	padding: 0 20px
+	position: relative
+	margin-bottom: 5px
+	&:after
+		content: ''
+		position: absolute
+		right: 20px
+		top: 50%
+		transform: translateY(-50%)
+		+s(arrow)
+select
+	display: none
+	cursor: pointer
+	border: 1px solid #e2e2e2
+	padding: 10px 0
+	width: 100%
+	option
+		color: #444
+		font: 400 15px/30px "Exo 2"
+		padding: 10px 20px
