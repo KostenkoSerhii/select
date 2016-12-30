@@ -2754,7 +2754,7 @@ function sayHello() {
 $(document).ready(function () {
 	$(".town-select-wrapper").children().before("<div class='town-view'>Город*</div>");
 	$(".town-view").on("click", function () {
-		var thisSelect = $(this).next().children(".town-select"); /*написал так потому, что могут 
+		var thisSelect = $(this).next().children(".town-select"); /*написал так потому, что(предпологаю) могут 
                                                             быть и другие select с  классом ".town-select" */
 		thisSelect.attr("size", "6");
 		$(".town-select").not(thisSelect).hide();
