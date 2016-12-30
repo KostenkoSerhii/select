@@ -8,12 +8,14 @@
 */
 $(document).ready(function(){
 	$(".block").on("click", function(){
-		$(".toogle").slideToggle(300);
+		$(this).next().children(".toogle").slideToggle(300);
 	});
-	$(".toogle option").on("click", function(){
+	$("option").on("click", function(){
 		var t = $(this).text();
-		$(".block").html(t); 
-		$(".toogle").slideUp();
+		$(this).parent().parent().prev(".block").html(t);
+		$(this).attr("selected", true);
+		$(this).siblings().removeAttr("selected");
+		$(this).parents(".toogle").slideUp();
 	});
 	$(document).mouseup(function (e){ 
 		var selectBlock = $(".container"); 
