@@ -2760,5 +2760,10 @@ $(document).ready(function () {
     $(".block").html(t);
     $(".toogle").slideUp();
   });
-  $(".wrapper").on("click", function () {});
+  $(document).mouseup(function (e) {
+    var selectBlock = $(".container");
+    if (!selectBlock.is(e.target) && selectBlock.has(e.target).length === 0) {
+      $(".toogle").slideUp();
+    }
+  });
 });
