@@ -7,24 +7,27 @@
 /*sayHello();
 */
 $(document).ready(function(){
-
-	$(".block").on("click", function(){
-	$(".block").not(this).next().children(".toogle").hide();
-	$(this).next().children(".toogle").slideToggle(300);
+	$(".town-select-wrapper").children().before("<div class='town-view'>Город*</div>");
+	$(".town-view").on("click", function(){
+		var thisSelect = $(this).next().children(".town-select");/*написал так потому, что могут 
+		быть и другие select с  классом ".town-select" */
+		thisSelect.attr("size","6");
+		$(".town-select").not(thisSelect).hide();
+		thisSelect.slideToggle(300);
 	});
 
-	$("option").on("click", function(){
-		var t = $(this).text();
-		$(this).parent().parent().prev(".block").html(t);
+	$(".town-select option").on("click", function(){
+		var optionText = $(this).text();
+		$(this).parent().parent().prev(".town-view").html(optionText);
 		$(this).attr("selected", true);
 		$(this).siblings().removeAttr("selected");
-		$(this).parents(".toogle").slideUp();
+		$(this).parents(".town-select").slideUp();
 	});
 	
 	$(document).mouseup(function (e){ 
-		var selectBlock = $(".container"); 
+		var selectBlock = $(".town-select-wrapper"); 
 		if (!selectBlock.is(e.target) && selectBlock.has(e.target).length === 0) { 
-			$(".toogle").slideUp(); 
+			$(".town-select").slideUp(); 
 		}
 	});
 

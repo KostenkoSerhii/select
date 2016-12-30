@@ -1,12 +1,18 @@
-
-<div class="wrapper">
-	<div class="block">Город*</div>
-	<form action="#">
-		<select size="6" class="toogle">
-		{% import "data/data.html" as tests %}
+	<form>
+		<select  class="town-select">
+			<option value="op1">Киев</option>
+			<option value="op2">Львов</option>
+			<option value="op3">Черкассы</option>
+			<option value="op4">Бровары</option>
+			<option value="op5">Ужгород</option>
+			<option value="op6">Полтава</option>
+			<option value="op7">Краматорск</option>
+			<option value="op8">Киев</option>
+			<option value="op9">Львов</option>
+		<!-- {% import "data/data.html" as tests %}
 			{% for test in tests.list %}
 			<option value="{{test.value}}">{{test.city_name}}</option>
-			{% endfor %}
+			{% endfor %} -->
 		</select>
 	</form>
-</div>
+
