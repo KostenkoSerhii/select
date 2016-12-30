@@ -2752,9 +2752,12 @@ function sayHello() {
 /*sayHello();
 */
 $(document).ready(function () {
+
   $(".block").on("click", function () {
+    $(".block").not(this).next().children(".toogle").hide();
     $(this).next().children(".toogle").slideToggle(300);
   });
+
   $("option").on("click", function () {
     var t = $(this).text();
     $(this).parent().parent().prev(".block").html(t);
@@ -2762,6 +2765,7 @@ $(document).ready(function () {
     $(this).siblings().removeAttr("selected");
     $(this).parents(".toogle").slideUp();
   });
+
   $(document).mouseup(function (e) {
     var selectBlock = $(".container");
     if (!selectBlock.is(e.target) && selectBlock.has(e.target).length === 0) {

@@ -1,39 +1,12 @@
 
-<!--begin wrapper-->
-<div class="container">
-	<div class="wrapper">
-		<div class="block">Город*</div>
-		<form action="#">
-			<select size="6" class="toogle">
-				<option value="1">Киев</option>
-				<option value="2">Львов</option>
-				<option value="3">Днепропетровск</option>
-				<option value="4">Бровары</option>
-				<option value="5">Черкассы</option>
-				<option value="6">Киев</option>
-				<option value="7">Львов</option>
-				<option value="8">Днепропетровск</option>
-				<option value="9">Бровары</option>
-				<option value="10">Черкассы</option>
-			</select>
-		</form>
-	</div>
-		<div class="wrapper">
-		<div class="block">Город*</div>
-		<form action="#">
-			<select size="6" class="toogle">
-				<option value="1">Киев</option>
-				<option value="2">Львов</option>
-				<option value="3">Днепропетровск</option>
-				<option value="4">Бровары</option>
-				<option value="5">Черкассы</option>
-				<option value="6">Киев</option>
-				<option value="7">Львов</option>
-				<option value="8">Днепропетровск</option>
-				<option value="9">Бровары</option>
-				<option value="10">Черкассы</option>
-			</select>
-		</form>
-	</div>  
+<div class="wrapper">
+	<div class="block">Город*</div>
+	<form action="#">
+		<select size="6" class="toogle">
+		{% import "data/data.html" as tests %}
+			{% for test in tests.list %}
+			<option value="{{test.value}}">{{test.city_name}}</option>
+			{% endfor %}
+		</select>
+	</form>
 </div>
-	<!--end wrapper-->
