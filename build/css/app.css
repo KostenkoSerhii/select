@@ -97,13 +97,10 @@ body {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-}
-
-.town-select-wrapper {
   padding: 50px 60px 50px;
 }
 
-.town-view {
+.select-view {
   background: #fff;
   border: 1px solid #e2e2e2;
   color: #a7a7a7;
@@ -115,7 +112,7 @@ body {
   margin-bottom: 5px;
 }
 
-.town-view:after {
+.select-view:after {
   content: '';
   position: absolute;
   right: 20px;
@@ -129,21 +126,37 @@ body {
   background-position: -30px -29px;
 }
 
-select {
+ul.select-options {
+  background: #fff;
   position: absolute;
   display: none;
   cursor: pointer;
   border: 1px solid #e2e2e2;
-  padding: 11px 0;
-  width: 100%;
   z-index: 1;
   width: 580px;
 }
 
-select option {
+ul.select-options li {
   color: #444;
   font: 400 15px/30px "Exo 2";
   padding: 10px 20px;
+}
+
+ul.select-options li[rel="hide"] {
+  display: none;
+}
+
+ul.select-options li.active {
+  background: #eaeaea;
+}
+
+ul.select-options li:hover {
+  background: #f9f9f9;
+  transition: background .4s;
+}
+
+.select-hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=app.css.map */
