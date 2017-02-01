@@ -117,10 +117,7 @@ body {
   content: '';
   position: absolute;
   right: 20px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  top: 7px;
   width: 0px;
   height: 0px;
   border-style: solid;
