@@ -41,7 +41,6 @@ $(document).ready(function(){
         $listItems.click(function(e) {
             $(this).addClass("active");
             $listItems.not(this).removeAttr("class");
-
             e.stopPropagation();
             $styledSelect.text($(this).text()).removeClass('active');
             $this.val($(this).attr('rel'));

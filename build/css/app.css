@@ -103,16 +103,17 @@ body {
 .select-view {
   background: #fff;
   border: 1px solid #e2e2e2;
-  color: #a7a7a7;
+  color: #a7a7a8;
   cursor: pointer;
-  font: 400 15px/50px "Exo 2";
+  font: 400 15px/1em Arial, sans-serif;
   height: 50px;
-  padding: 0 20px;
+  padding: 1em 20px;
   position: relative;
   margin-bottom: 5px;
 }
 
 .select-view:after {
+  transition: all .3s;
   content: '';
   position: absolute;
   right: 20px;
@@ -120,10 +121,21 @@ body {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  background-image: url("../img/sprite.png");
-  width: 8px;
-  height: 7px;
-  background-position: -30px -29px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 7px 4px 0 4px;
+  border-color: #a7a7a8 transparent transparent transparent;
+}
+
+.select_wrapper {
+  width: 200px;
+  position: relative;
+}
+
+.select_wrapper .active:after {
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
 }
 
 ul.select-options {
@@ -133,13 +145,14 @@ ul.select-options {
   cursor: pointer;
   border: 1px solid #e2e2e2;
   z-index: 1;
-  width: 580px;
+  width: 100%;
 }
 
 ul.select-options li {
-  color: #444;
-  font: 400 15px/30px "Exo 2";
+  color: #a7a7a8;
+  font: 400 15px/1em Arial, sans-serif;
   padding: 10px 20px;
+  transition: background .4s;
 }
 
 ul.select-options li[rel="hide"] {
@@ -150,9 +163,12 @@ ul.select-options li.active {
   background: #eaeaea;
 }
 
+ul.select-options li.active:hover {
+  background: #eaeaea;
+}
+
 ul.select-options li:hover {
   background: #f9f9f9;
-  transition: background .4s;
 }
 
 .select-hidden {
